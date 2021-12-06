@@ -240,6 +240,7 @@ align-items: center;
     0px 2px 2px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
  }
+ /* /////////////////МОДАЛЬНЕ ВІКНО///////////// */
  .backdrop {
    position: fixed;
    top: 0;
@@ -299,8 +300,183 @@ align-items: center;
    width: 11px;
    height: 11px;
   }
+  .formal-modal {
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: left;
+  }
+  .formal-modal input {
+    width: 100%;
+	height: 40px;
+	margin-top: 4px;
+	margin-bottom: 10px;
+	padding: 12px 16px 12px 42px;
 
- 
+	font-family: inherit;
+	font-size: 12px;
+
+	border: 1px solid rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+  transition: var(--duration) var(--function-animation);
+  }
+
+  .form-title {
+   margin-bottom: 12px;
+   margin-top: 40px;
+   font-family: Roboto;
+   font-weight: 700;
+   font-size: 20px;
+   line-height: 1.15;
+   text-align: center;
+   letter-spacing: 0.03em;
+   color: var(--second-title-color);
+  }
+
+  
+  .form-lable {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   margin-bottom: 4px;
+   margin-left: 41px;
+   margin-right: 462px;
+   font-family: Roboto;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 1.15;
+   letter-spacing: 0.01em;
+   fill: #757575;
+  }
+
+.form-lable:hover >.form-icon,
+.form-lable:focus-within > .form-icon{
+  cursor: pointer;
+  fill: var(--accent-color);
+}
+ .aligh-icon {
+   position: relative;
+   margin-bottom: 10px;
+ }
+ .form-input:focus {
+    border: 1px solid #2196f3;
+ }
+ .form-input:focus ~.form-icon {
+   fill: var(--accent-color);
+ }
+ .form-icon {
+   position: absolute;
+   top: 50%;
+   left: 16px;
+   transform: translateY(-25%);
+   fill: var(--second-title-color);
+ }
+ .formal-modal:hover,
+ .formal-modal:focus {
+   border-color:#2196f3 ;
+   outline: var(--accent-color);
+   cursor: pointer;
+ }
+
+
+
+
+
+ .comment {
+   width: 448px;
+   height: 120px;
+   padding: 12px 16px;
+   margin-bottom: 20px;
+   resize: none;
+   outline: none;
+   border: 1px solid rgba(33, 33, 33, 0.2);
+   border-radius: 4px;
+ }
+ .comment:focus {
+   border: 1px solid #2196f3;
+ }
+ .form-field textarea::placeholder {
+   font-family: Roboto;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 1.17;
+   letter-spacing: 0.01em;
+   color: rgba(117, 117, 117, 0.5);
+ }
+ .form-button {
+  position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 200px;
+	height: 50px;
+	margin-top: auto;
+ }
+ .form-button:hover,
+ .form-button:focus {
+   background-color: var(--accent-color);
+   border-color: #188ce8;
+   color: var(--main-btn-color);
+ }
+
+ .checkbox {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+ }
+.checkbox-lable:focus {
+background-color: var(--accent-color);
+background-image: url(../image/icon.svg);
+background-size: contain;
+background-origin: border-box;
+border: var(--accent-color);
+border-radius: 2px;
+}
+.checkbox-lable {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration-skip-ink: none;
+
+  color: var(--main-text-color);
+}
+.contract {
+  margin-left: 4px;
+  text-decoration-line: underline;
+  color: #2196F3;
+}
+.checkbox-icon {
+  width: 16px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 8px;
+  border: 2px solid var(--header-text-color);
+  border-radius: 2px;
+}
+.checkbox-lable:focus {
+  background-color: var(--accent-color);
+}
+.checkbox:checked +.checkbox-icon {
+  background-color: var(--accent-color);
+  background-image: url(../image/icon.svg);
+  background-size: contain;
+  background-origin: border-box;
+  border: var(--accent-text-color);
+  border-radius: 2px;
+}
 
 /* ------------------benefits---------- */
 
