@@ -445,6 +445,8 @@ align-items: center;
   margin-right: 8px;
   border: 2px solid  #212121;
   border-radius: 2px;
+
+  margin-left: 52px;
 }
 .checkbox-label:focus {
   background-color: var(--accent-color);
