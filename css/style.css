@@ -250,15 +250,16 @@ align-items: center;
 
    background-color: rgba(0, 0, 0, 0.2);
    transition: opacity var(--duration) var(--function-animator);
+   visibility: var(--duration) var(--function-animation);
  }
- .backdrop.is-hidden {
+ /* .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
-  }
+  } */
 
  .backdrop.is-hidden.modal {
    opacity: 0;
-   transform: scale(1.1)  translate(-50%, -50%);
+   transform: scale(2) rotate(270deg) translate(0);
  }
  .modal {
    position: absolute;
@@ -272,7 +273,7 @@ align-items: center;
    border-radius: 4px;
 
    transform: scale(1) rotate(0) translate(-50%, -50%);
-   transition: transform var(--duration) var(--function-animation), opacity var(--duration) var(--function-animation);
+   transition: transform var(--duration);
  }
  .modal-btn {
    position: absolute;
@@ -285,10 +286,20 @@ align-items: center;
    background-color: #fff;
    border: 1px solid rgba(0, 0, 0, 0.1);
    border-radius: 50%;
+   display: flex;
    align-items: center;
    justify-content: center;
+   fill: #000;
    cursor: pointer;
+   transition-property: fill;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--function-animation);
  }
+ .modal-btn:hover,
+ .modal-btn:focus {
+ fill: var(--accent-color);
+ }
+
  .is-hidden {
    visibility: hidden;
    opacity: 0;
@@ -298,8 +309,6 @@ align-items: center;
    align-items: center;
    justify-content: center;
    cursor: pointer;
-   width: 11px;
-   height: 11px;
  }
 
 
@@ -316,7 +325,7 @@ align-items: center;
 }
 
 .form-field input {
-  width: 448px;
+  width: 100%;
   height: 40px;
   padding-left: 42px;
   padding-right: 12px;
@@ -332,7 +341,6 @@ align-items: center;
 
 .form-label {
   margin-bottom: 4px;
-  margin-top: 12px;
   
   font-weight: normal;
   font-size: 12px;
@@ -343,15 +351,13 @@ align-items: center;
 .align-icon {
   position: relative;
   margin-bottom: 10px;
-  margin-top: 4px;
 }
+
 .form-icon {
   position: absolute;
   top: 50%;
   left: 16px;
   
-  width: 12px;
-  height: 12px;
   transform: translateY(-50%);
   fill: #212121;
 }
@@ -377,8 +383,6 @@ align-items: center;
   border: 1px solid #2196f3;
 }
 .form-field textarea::placeholder {
-  font-family: Roboto;
-  font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 1.17;
@@ -386,39 +390,32 @@ align-items: center;
   color: rgba(117, 117, 117, 0.5);
 }
 
-
 .checkbox {
+  background: url(../image/icon-check.svg);
+  border: none;
+  box-shadow: none;
+  appearance: none;
   position: absolute;
   white-space: nowrap;
   width: 1px;
   height: 1px;
   overflow: hidden;
-  border: 1px;
+  border: 0;
   padding: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
 }
-.checkbox-label:focus {
-  background-color: var(--accent-color);
-  background-image: url(../image/icon-check.svg);
- 
-  background-size: contain;
-  background-origin: border-box;
-  border: var(--accent-color);
-  border-radius: 2px;
-}
 
+.checkbox:checked {
+  background-image: url(../image/icon-check.svg);
+}
 .checkbox-label {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  margin-top: 10px;
  
-	flex-direction: row;
-	margin-top: 10px;
-  margin-bottom: 0;
-
-
-  font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.71;
@@ -427,35 +424,20 @@ align-items: center;
   color: var(--third-title-color);
 }
 
-.checkbox-label input {
-  width: 16px;
-	height: 15px;
-	padding: 0;
-  margin: 0 9px 0 0;
-
-
-}
-.checkbox-icon {
-  width: 16px;
-  height: 15px;
-  display: inline-block;
-  margin-right: 9px;
-  border: 2px solid  #212121;
-  border-radius: 2px;
-}
-
 .checkbox-label:focus {
   background-color: var(--accent-color);
 }
+
 .checkbox:checked + .checkbox-icon {
   background-color: var(--accent-color);
-   background-image: url(../image/icon-check.svg);
+
   background-size: contain;
   background-origin: border-box;
   border: var(--accent-color);
   border-radius: 2px;
 }
 .contract {
+  display: block;
   margin-left: 4px;
   text-decoration-line: underline;
   color: #2196f3;
