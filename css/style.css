@@ -449,7 +449,7 @@ background-image: url(../image/icon-check.svg);
   background-color: var(--accent-color);
 }
 .checkbox:checked + .checkbox-icon {
-  background-color: var(--accent-color);
+ background: var(--accent-color);
   background-image: url(../image/icon-check.svg);
   background-size: contain;
   background-origin: border-box;
