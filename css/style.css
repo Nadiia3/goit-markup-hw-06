@@ -460,11 +460,10 @@ transition: background-image var(--duration) var(--function-animator);
   border: 2px solid var(--second-title-color);
   border-radius: 2px;
 }
-.checkbox-label:focus {
-  background-color: var(--accent-color);
-}
+
 .checkbox:checked + .checkbox-icon {
- background: var(--accent-color);
+  opacity: 1;
+  background: var(--accent-color);
   background-image: url(../image/icon-check.svg);
   background-size: contain;
   background-origin: border-box;
